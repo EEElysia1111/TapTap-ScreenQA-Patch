@@ -4,6 +4,20 @@
 
 > 本项目与 TapTap 作者、DeepSeek 均无隶属关系。仅用于个人学习和辅助复习。
 
+## 预构建 APK
+
+Release v1.0.0 提供：
+
+- `TapTap-patched-v1.0.0.apk`：已签名，可直接安装
+- `TapTap-ScreenQA-Patch-v1.0.0-source.zip`：对应完整源码（GPL-3.0）
+
+下载页：https://github.com/EEElysia1111/TapTap-ScreenQA-Patch/releases/tag/v1.0.0
+
+APK SHA-256：`44cd1f57d4af381d431b5c61d5684d011eaf11bb223924b617b37c045476f8a3`  
+签名证书：`CN=TapTap ScreenQA Patch, O=EEElysia1111, C=CN`
+
+安装前必须卸载官方 TapTap；本修改版与官方版签名不同，不能覆盖安装。
+
 ## 为什么需要补丁
 
 官方 TapTap 1.6.2 在 Android 14+ 有两个问题：
