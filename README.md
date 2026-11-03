@@ -97,6 +97,8 @@ TapTap 使用 **GPL-3.0**。本仓库的补丁属于衍生作品，同样使用 
 
 TapTap 需要无障碍和前台服务权限。请只使用你信任的构建，并自行审查补丁。不要安装来源不明的“修改版 TapTap”。
 
+漏洞报告方式、范围和处理流程见 [SECURITY.md](SECURITY.md)。
+
 ## 相关仓库
 
 - [ScreenQA](https://github.com/EEElysia1111/ScreenQA)：截屏识题应用。
