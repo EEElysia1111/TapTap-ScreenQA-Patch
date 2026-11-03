@@ -1,0 +1,25 @@
+TapTap
+Copyright (C) Kieron Quinn
+https://github.com/KieronQuinn/TapTap
+
+This repository contains unofficial patches for TapTap 1.6.2.
+TapTap is licensed under the GNU General Public License v3.0.
+
+The patches in this repository modify the following files:
+
+- app/src/main/java/com/kieronquinn/app/taptap/utils/extensions/Extensions+Service.kt
+- app/src/main/java/com/kieronquinn/app/taptap/components/columbus/actions/custom/LaunchAppAction.kt
+- app/src/main/java/com/kieronquinn/app/taptap/repositories/actions/ActionsRepository.kt
+
+Modifications:
+1. Use FOREGROUND_SERVICE_TYPE_SPECIAL_USE so the foreground service
+   matches the manifest and actually enters the foreground on Android 14+.
+2. Remove the "target app is already open" availability gate so the
+   action can be triggered repeatedly.
+3. For com.dsh.screenqa, send the local broadcast
+   com.dsh.screenqa.CAPTURE instead of starting an Activity.
+4. Pre-set the default double-tap action to launch ScreenQA.
+
+These modifications are released under GPL-3.0. There is no warranty.
+
+This project is not affiliated with or endorsed by Kieron Quinn or TapTap.

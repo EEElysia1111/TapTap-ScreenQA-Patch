@@ -1,0 +1,31 @@
+--- a/app/src/main/java/com/kieronquinn/app/taptap/components/columbus/actions/custom/LaunchAppAction.kt
++++ b/app/src/main/java/com/kieronquinn/app/taptap/components/columbus/actions/custom/LaunchAppAction.kt
+@@ -1,6 +1,7 @@
+ package com.kieronquinn.app.taptap.components.columbus.actions.custom
+ 
+ import android.content.Context
++import android.content.Intent
+ import androidx.lifecycle.Lifecycle
+ import androidx.lifecycle.lifecycleScope
+ import com.google.android.columbus.feedback.FeedbackEffect
+@@ -41,7 +42,6 @@
+     }
+ 
+     override fun isAvailable(): Boolean {
+-        if(isOpen.value) return false
+         if(!context.isAppLaunchable(appPackageName)) return false
+         return super.isAvailable()
+     }
+@@ -50,6 +50,12 @@
+         detectionProperties: GestureSensor.DetectionProperties,
+         isTripleTap: Boolean
+     ) {
++        if (appPackageName == "com.dsh.screenqa") {
++            context.sendBroadcast(
++                Intent("com.dsh.screenqa.CAPTURE").setPackage(appPackageName)
++            )
++            return
++        }
+         if(showOverlayNotificationIfNeeded()) return
+         val packageManager = context.packageManager
+         try {

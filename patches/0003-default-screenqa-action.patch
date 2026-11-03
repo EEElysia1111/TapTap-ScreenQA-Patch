@@ -1,0 +1,26 @@
+--- a/app/src/main/java/com/kieronquinn/app/taptap/repositories/actions/ActionsRepository.kt
++++ b/app/src/main/java/com/kieronquinn/app/taptap/repositories/actions/ActionsRepository.kt
+@@ -120,17 +120,13 @@
+     override val onChanged = MutableSharedFlow<Unit>()
+ 
+     override suspend fun populateDefaultActions(context: Context) {
+-        val defaultDoubleTapActions = if(isActionSupported(context, SCREENSHOT)){
+-            arrayOf(LAUNCH_ASSISTANT, SCREENSHOT)
+-        }else{
+-            arrayOf(LAUNCH_ASSISTANT, HOME)
+-        }.mapIndexed { index, tapTapActionDirectory ->
++        val defaultDoubleTapActions = arrayOf(
+             DoubleTapAction(
+-                name = tapTapActionDirectory.name,
+-                index = index,
+-                extraData = ""
+-            )
+-        }
++                name = LAUNCH_APP.name,
++                index = 0,
++                extraData = "com.dsh.screenqa"
++            )
++        )
+         val defaultTripleTapActions = arrayOf(NOTIFICATIONS)
+             .mapIndexed { index, tapTapActionDirectory ->
+                 TripleTapAction(
